@@ -1,0 +1,507 @@
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Nunito&display=swap');
+
+
+/* REINICIAR VALORES */
+
+  *, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+
+
+:root, [data-bs-theme=light] {
+  --main-font: 'Nunito';
+  --title-font: 'Grape Nuts', cursive;
+  --alternate-font: 'Arial';
+
+  --weigth-3: 300;
+  --weigth-4: 400;
+
+  
+  --main-color: #011F26;
+  --secondary-color: #093A40;
+  --tertiary-color: #48594E;
+  --light-color: #F2F2F2;
+  --contrast-color: #F2E7C4;
+  --contrast-color2: #f2d062;
+  --btn-color: rgb(209 134 175);
+  --btn-deep-color: rgb(196, 83, 145);
+
+  
+
+}
+
+
+/* ESTILOS BOOTSRAP */
+
+/* cambios en variables */
+
+.bg-primary{
+  background-color: var(--tertiary-color) !important;
+}
+
+.bg-secondary{
+  background-color: var(--contrast-color) !important;
+}
+
+.border-primary{
+ background-color: var(--contrast-color2) !important;
+
+}
+
+/* HEADER */
+
+/* logo de la web */
+.rounded{
+  width: 50px;
+  height: 50px;
+}
+
+
+/* menú */
+header{
+ position: fixed;
+}
+
+/* título h1 */
+.title{
+  font-family: var(--title-font);
+  font-size: 10rem;
+  font-weight: 800;
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .title {
+    font-size: 4rem;
+  }
+}
+
+/* barra de navegación */
+.navbar{
+  background-color: var(--contrast-color) !important;
+
+}
+
+/* enlaces */
+.nav-link{
+  position: relative;
+  /* padding: 0.2rem 0.4rem; */
+  color: var(--main-color) !important;
+}
+
+
+/* animación del menú */
+.nav-link:link,
+.nav-link:visited {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.nav-link:link::after, .nav-link:visited::after,
+.nav-link:link::before, .nav-link:visited::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.25rem;
+    background-color: var(--btn-deep-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out !important;
+}
+
+.nav-link:link::after,
+.nav-link:visited::after{
+    top: 0;
+    transform-origin: left;
+}
+
+.nav-link:link::before,
+.nav-link:visited::before{
+    bottom: 0;
+    transform-origin: right;
+}
+
+.nav-link:hover::after,
+.nav-link:hover::before{
+    transform:scaleX(1);
+
+}
+
+/* botones*/
+.btn{
+  background-color: var(--btn-color);
+  border-color: var(--btn-color);
+  color: var(--main-color);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover{
+  background-color: var(--btn-deep-color) ;
+  border-color: var(--btn-deep-color);
+  color: var(--main-color) !important;
+  font-weight: bold;
+  box-shadow: inset 0px 0px 10px 12px rgba(1, 31, 38, 0.3);
+  transition: box-shadow 0.8s ease;
+}
+
+
+
+/* botón hero */
+.btn-hero{
+  background-color: var(--btn-color) !important;
+  color: var(--secondary-color) !important;
+  border-color: var(--main-color);
+  border-radius: 5px;
+  font-weight: bolder;
+  box-shadow: inset 0px 0px 10px 12px rgba(1, 31, 38, 0.3);
+}
+
+.btn-hero:hover{
+  background-color: var(--btn-deep-color) !important;
+  border-color: var(--main-color);
+  color: var(--main-color) !important;
+  font-weight: bolder;
+  box-shadow: inset 0px 0px 25px 2px rgba(1, 31, 38, 0.8);
+  transition: box-shadow 0.8s ease;
+  
+}
+
+/* input */
+.form-control{
+  width: 30%;
+  border-radius: 0%;
+  border: 1px solid var(--main-color);
+}
+
+.form-control:hover {
+  outline: 2px solid var(--btn-color); 
+  transition: outline 0.5s ease;
+}
+
+.form-control:focus {
+  border: 2px solid var(--btn-deep-color);
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 5px var(--btn-color)
+}
+
+/* CUERPO */
+body{
+  font-family: var(--main-font);
+  font-weight: 600;
+  font-size: 1.2rem;
+  
+}
+
+/* CARDS 1 */
+.card-img-top, .card-title{
+  cursor: pointer;
+}
+
+.card-img-top:hover{
+  box-shadow: 0px 0px 25px -5px rgba(1, 31, 38, 0.5);
+  transition: box-shadow 0.8s ease;
+}
+
+.card-title{
+  font-size: 2.3rem !important;
+  font-weight: bold;
+}
+
+.card-text{
+  font-size: 1.8rem !important;
+}
+
+
+
+/* IMAGEN + TEXTO */
+
+/* fondos textos*/
+.col-md-6{
+  background-color: var(--contrast-color) !important;
+}
+
+.col-md-7{
+  background-color: var(--tertiary-color) !important;
+}
+
+/* carrusel */
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0s 0.3s;
+}
+
+/* imágenes del carrusel */
+.d-block {
+  flex-basis: 80%;
+  height: 500px;
+  object-fit: scale-down;
+  } 
+
+/* FOOTER */
+
+.help{
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.card-footer{
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.card-footer:hover, .help:hover{
+  color: var(--main-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h5, h2{
+  font-weight: 600;
+}
+
+p{
+  font-weight: 200;
+  line-height: 2em;
+}
+
+
+
+/* ---------------------------------------------------------------------------------- */
+
+/* MIS ESTILOS */
+
+/* hero */
+.hero{
+  background-image: url("../img/sandman.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 5;
+}
+
+
+/* botón del hero */
+.btn-hero{
+  background-color: var(--contrast-color);
+  color: var(--main-color);
+}
+
+.btn-hero:hover{
+  background-color: var(--contrast-color2);
+  color: var(--main-color);
+} 
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc(50%);
+  gap: 10px;
+  
+}
+
+.image-section{
+  width: 75vW;
+}
+
+/* IMAGEN + TEXTO */
+
+/* botón más información */
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+ }
+ 
+ button.learn-more {
+  width: 15rem;
+  height: 1rem;
+  height: auto;
+ }
+ 
+ button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 10px;
+  width: 3rem;
+  height: 3rem;
+  background: var(--btn-deep-color);
+  border-radius: 1.625rem;
+ }
+ 
+ button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: var(--light-color);
+ }
+ 
+ button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+ }
+ 
+ button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid var(--light-color);
+  border-right: 0.125rem solid var(--light-color);
+  transform: rotate(45deg);
+ }
+ 
+ button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.2rem 1rem;
+  margin: 0 0 0 1.85rem;
+  color: var(--light-color);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+ }
+ 
+ button:hover .circle {
+  width: 100%;
+ }
+ 
+ button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+ }
+ 
+ button:hover{
+  color: #fff;
+ }
+
+ .button-text{
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  color: var(--contrast-color) !important;
+ }
+
+/* CARDS 3 */
+
+/* imagen */
+.img-card{
+  flex-basis: 80%;
+  height: 400px;
+  object-fit: scale-down;
+}
+
+
+/* boton para volver arriba */
+.button {
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, var(--main-color), var(--tertiary-color));
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px 4px var(--contrast-color);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: var(--tertiary-color);
+  align-items: center;
+}
+
+.button:hover .svgIcon {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
+}
+
+.button::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Back to Top";
+  color: white;
+  transition-duration: .3s;
+  font-size: 0px;
+}
+
+.button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  transition-duration: 0.3s;
+}
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
